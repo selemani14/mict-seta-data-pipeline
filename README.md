@@ -5,9 +5,8 @@ The MICT SETA Data Pipeline MCP SERVER is  designed to expose data-processing to
 ## 🚀 MCP Hackathon Details:
 
     * Creator Name: Amundalia Selemani
-    <p align="center">
-  <img src="https://slidesmcpchallenge.stentguard.com/mict_seta_architecture.png" alt="MICT SETA Data Pipeline Architecture Diagram" width="500"/>
-</p>
+   
+  <img src="https://slidesmcpchallenge.stentguard.com/mict_seta_architecture.png" alt="MICT SETA Data Pipeline Architecture Diagram" width="700"/>
     * Power Point Presentation Link: https://slidesmcpchallenge.stentguard.com/mict-seta-data-pipelinePitch.pptx
 
     * Email: demuenator@gmail.com
