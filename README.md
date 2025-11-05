@@ -3,6 +3,9 @@
 This repository contains a simple server implementation using the `fastmcp` framework, designed to expose data-processing tools related to job skill prediction and curriculum planning for MICT SETA (Media, Information and Communication Technologies Sector Education and Training Authority).
 
 The primary tool, `SDP_employer_future_job_skill_predict`, processes employer data and future job descriptions, and saves the input parameters into a Word document report.
+<p align="center">
+  <img src="https://slidesmcpchallenge.stentguard.com/mict_seta_architecture.png" alt="MICT SETA Data Pipeline Architecture Diagram" width="700"/>
+</p>
 ## 🚀 MCP Hackathon Details:
 
     * Creator Name: Amundlia Selemani
