@@ -1,55 +1,52 @@
-MICT SETA Data Pipeline (mict-seta-data-pipeline)
+# MICT SETA Data Pipeline (FastMCP Server)
 
-🚀 Project Overview
+This repository contains a simple server implementation using the `fastmcp` framework, designed to expose data-processing tools related to job skill prediction and curriculum planning for MICT SETA (Media, Information and Communication Technologies Sector Education and Training Authority).
 
-This repository hosts a core component of the MICT SETA Sector Skills Plan (SSP) initiative: a structured Data Pipeline Server.
+The primary tool, `SDP_employer_future_job_skill_predict`, processes employer data and future job descriptions, and saves the input parameters into a Word document report.
 
-The server is built using the FastMCP (Model Context Protocol) framework and is designed to act as a structured data collection gateway. It receives predefined, validated data payloads from Large Language Models (LLMs) via 12 dedicated data collection tools and securely forwards them to an external Report Generator API for deep skills analysis and strategic foresight reporting.
+## 🚀 Getting Started
 
-Key Features
+### Prerequisites
 
-FastMCP-Based Tooling: Defines 12 specific tools (functions) for granular data collection.
+* Python 3.8+ (The code uses features compatible with modern Python versions, including `asyncio.to_thread`).
 
-Asynchronous Forwarding: Uses asynchronous HTTP to quickly forward structured data to a downstream API.
+### Installation
 
-Configuration: Uses .env for easy configuration of server host, port, and API endpoint.
+1.  **Install the dependencies** using the provided `requirements.txt`:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Test Client: Includes a simple requests-based client to verify end-to-end communication.
+### Running the Server
 
-🛠️ Project Structure
+1.  The server configuration is managed in `config.py` and via environment variables in a `.env` file (not provided, but assumed).
+    * **Default Host:** `localhost`
+    * **Default Port:** `8080`
+    * **Report Directory:** `mict_reports` (created if it doesn't exist)
+2.  Start the server by running `main.py`:
+    ```bash
+    python main.py
+    ```
+    The server will start and log its host and port.
 
-File
+### Running the Client
 
-Description
+The `mict_seta_client_test.py` file demonstrates how to connect to the running server and call the tool.
 
-edu_workflow_mcp_server2.py
+1.  Ensure the server is running (see above).
+2.  Execute the client script:
+    ```bash
+    python mict_seta_client_test.py
+    ```
+    The client will:
+    * Connect to the server.
+    * List available tools for verification.
+    * Call the `SDP_employer_future_job_skill_predict` tool with a set of sample arguments.
+    * Print the structured response from the server, including the path to the generated report file.
 
-The main asynchronous FastMCP server application, containing all 12 data collection tool definitions.
+## 📁 Project Structure
 
-test_client.py
-
-A simple Python script used to test the connection and data flow to one of the server's tools.
-
-project_config.env
-
-Configuration file for server host, port, and the target Report API URL.
-
-requirements.txt
-
-Lists all necessary Python dependencies (fastmcp, python-dotenv, requests, etc.).
-
-README.md
-
-This setup and usage guide.
-
-.gitignore
-
-Ensures development files and sensitive configurations are not committed to Git.
-
-⚙️ Setup and Installation
-
-1. Clone the Repository
-
-Clone the project to your local machine and navigate into the directory:
-
-git clone
+* `main.py`: The entry point for the FastMCP server. It initializes the `FastMCP` instance and defines the tools.
+* `config.py`: Handles configuration, environment variable loading (`.env`), logging setup, and initializes the `FastMCP` object.
+* `report_generator.py`: Contains the logic to generate a `.docx` report from tool parameters. It uses `asyncio.to_thread` to offload synchronous file I/O operations (creation/saving) to a worker thread.
+* `mict_seta_client_test.py`: An example client script demonstrating connection to the server and a tool call using `ClientSession` and `streamablehttp_client`.
