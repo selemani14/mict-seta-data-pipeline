@@ -1,0 +1,4 @@
+fastmcp
+nest-asyncio # Used in the client for running asyncio.run in interactive environments
+python-dotenv
+python-docx
