@@ -5,11 +5,11 @@ This repository contains a simple server implementation using the `fastmcp` fram
 The primary tool, `SDP_employer_future_job_skill_predict`, processes employer data and future job descriptions, and saves the input parameters into a Word document report.
 ## 🚀 MCP Hackathon Details:
 
-    **Creator Name:** Amundlia Selemani
+    * Creator Name: Amundlia Selemani
 
-    **Power Point Presentation Link**: https://slidesmcpchallenge.stentguard.com/mict-seta-data-pipelinePitch.pptx
+    * Power Point Presentation Link: https://slidesmcpchallenge.stentguard.com/mict-seta-data-pipelinePitch.pptx
 
-    **Email:** demuenator@gmail.com
+    * Email: demuenator@gmail.com
     
 ## 🚀 Getting Started
 
